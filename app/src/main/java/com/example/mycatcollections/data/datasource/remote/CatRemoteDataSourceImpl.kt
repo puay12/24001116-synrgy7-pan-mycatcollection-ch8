@@ -7,7 +7,7 @@ import com.example.mycatcollections.data.model.CatResponse
 class CatRemoteDataSourceImpl(
     private val catApiService: CatApiService
 ) : CatRemoteDataSource {
-    override suspend fun fetchCatData(): List<CatResponse> {
-        return catApiService.getCatCollections().results
+    override suspend fun fetchCatData(): List<CatResponse>? {
+        return catApiService.getCatCollections()
     }
 }

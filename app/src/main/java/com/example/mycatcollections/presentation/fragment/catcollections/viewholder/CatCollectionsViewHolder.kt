@@ -1,5 +1,6 @@
 package com.example.mycatcollections.presentation.fragment.catcollections.viewholder
 
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.mycatcollections.data.model.Cat
@@ -13,6 +14,6 @@ class CatCollectionsViewHolder(
     fun render(data: Cat) {
         binding.catImage.load(data.imgUrl)
         binding.catText.text = data.name
-        binding.root.setOnClickListener{ catCollectionsAdapterListener.onClickCard(data) }
+        binding.root.setOnClickListener{ catCollectionsAdapterListener.onClickCard(data.id) }
     }
 }

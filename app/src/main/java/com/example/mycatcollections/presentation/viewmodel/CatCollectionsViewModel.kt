@@ -53,8 +53,7 @@ class CatCollectionsViewModel(
     private fun loadData() {
         viewModelScope.launch {
             try {
-                val cats = catApiRepository.getCatCollections()
-                _liveCatCollectionsData.value = cats
+                _liveCatCollectionsData.value = catApiRepository.getCatCollections()
             } catch (error: Throwable) {
                 _error.value = error
             }

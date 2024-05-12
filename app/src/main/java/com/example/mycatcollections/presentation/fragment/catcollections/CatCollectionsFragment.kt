@@ -2,7 +2,6 @@ package com.example.mycatcollections.presentation.fragment.catcollections
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,8 +41,8 @@ class CatCollectionsFragment : Fragment(), CatCollectionsAdapterListener {
         binding.swipeRefresh.setOnRefreshListener { refresh() }
     }
 
-    override fun onClickCard(data: Cat) {
-        TODO("Not yet implemented")
+    override fun onClickCard(id: String) {
+
     }
 
     private fun setData(context: Context) {
@@ -53,7 +52,7 @@ class CatCollectionsFragment : Fragment(), CatCollectionsAdapterListener {
         )
         binding.catList.adapter = catCollectionsAdapter
         binding.catList.itemAnimator = DefaultItemAnimator()
-        binding.catList.addItemDecoration(SpacesItemDecoration(2,12,false))
+        binding.catList.addItemDecoration(SpacesItemDecoration(2,5,false))
     }
 
     private fun refresh() {
@@ -67,7 +66,6 @@ class CatCollectionsFragment : Fragment(), CatCollectionsAdapterListener {
                 error.message.toString(),
                 Snackbar.LENGTH_SHORT
             ).show()
-            Log.e("ini error", error.message.toString())
         }
 
         binding.swipeRefresh.isRefreshing = false

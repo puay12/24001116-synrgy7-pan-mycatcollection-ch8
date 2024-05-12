@@ -9,7 +9,9 @@ class CatApiRepositoryImpl(
     private val catRemoteDataSource: CatRemoteDataSource
 ) : CatApiRepository {
     override suspend fun getCatCollections(): List<Cat> {
-        return catRemoteDataSource.fetchCatData().map { it.toCat() }
+        val response: List<CatResponse>? = catRemoteDataSource.fetchCatData()
+
+        return response!!.map { it.toCat() }
     }
 
     private fun CatResponse.toCat() : Cat {

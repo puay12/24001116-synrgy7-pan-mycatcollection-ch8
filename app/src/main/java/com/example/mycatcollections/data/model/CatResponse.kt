@@ -3,7 +3,6 @@ package com.example.mycatcollections.data.model
 import com.google.gson.annotations.SerializedName
 
 data class CatResponse(
-	val results: List<CatResponse>,
 
 	@field:SerializedName("width")
 	val width: Int? = null,

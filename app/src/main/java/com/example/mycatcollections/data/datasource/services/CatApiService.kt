@@ -2,7 +2,6 @@ package com.example.mycatcollections.data.datasource.services
 
 import com.example.mycatcollections.data.datasource.remote.API_KEY
 import com.example.mycatcollections.data.model.CatResponse
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
@@ -18,8 +17,8 @@ interface CatApiService {
         @Query("mime_types") mimeTypes: String = "jpg",
         @Query("format") format: String = "json",
         @Query("has_breeds") hasBreeds: String = "true",
-        @Query("order") order: String = "ASC",
+        @Query("order") order: String = "RANDOM",
         @Query("page") page: String = "0",
         @Query("limit") limit: String = "25"
-    ) : CatResponse
+    ) : List<CatResponse>?
 }

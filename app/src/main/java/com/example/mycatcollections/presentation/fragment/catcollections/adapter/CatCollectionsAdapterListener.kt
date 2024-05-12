@@ -3,5 +3,5 @@ package com.example.mycatcollections.presentation.fragment.catcollections.adapte
 import com.example.mycatcollections.data.model.Cat
 
 interface CatCollectionsAdapterListener {
-    fun onClickCard(data: Cat)
+    fun onClickCard(id: String)
 }
