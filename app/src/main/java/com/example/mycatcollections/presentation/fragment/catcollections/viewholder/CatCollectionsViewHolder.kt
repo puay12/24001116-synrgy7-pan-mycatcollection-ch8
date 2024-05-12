@@ -1,6 +1,5 @@
 package com.example.mycatcollections.presentation.fragment.catcollections.viewholder
 
-import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.mycatcollections.data.model.Cat

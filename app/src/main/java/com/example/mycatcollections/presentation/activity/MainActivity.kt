@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setupNavigationComponentWithAppbar()
-        supportActionBar?.title = "My Cat Collections"
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -14,6 +14,10 @@ class CatApiRepositoryImpl(
         return response!!.map { it.toCat() }
     }
 
+    override suspend fun getCatById(id: String): Cat {
+        return catRemoteDataSource.fetchCatDataById(id)?.toCat()!!
+    }
+
     private fun CatResponse.toCat() : Cat {
         return Cat(
             id = id!!,

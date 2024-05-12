@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.mycatcollections.R
 import com.example.mycatcollections.data.model.Cat
 import com.example.mycatcollections.databinding.FragmentCatCollectionsBinding
 import com.example.mycatcollections.extension.SpacesItemDecoration
@@ -28,7 +30,6 @@ class CatCollectionsFragment : Fragment(), CatCollectionsAdapterListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         return FragmentCatCollectionsBinding.inflate(inflater, container, false).also {
             binding = it
         }.root
@@ -42,7 +43,7 @@ class CatCollectionsFragment : Fragment(), CatCollectionsAdapterListener {
     }
 
     override fun onClickCard(id: String) {
-
+        navigateToDetail(id)
     }
 
     private fun setData(context: Context) {
@@ -69,5 +70,10 @@ class CatCollectionsFragment : Fragment(), CatCollectionsAdapterListener {
         }
 
         binding.swipeRefresh.isRefreshing = false
+    }
+
+    fun navigateToDetail(id: String) {
+        val action = CatCollectionsFragmentDirections.actionCatCollectionsFragmentToCatDetailFragment(id)
+        findNavController().navigate(action)
     }
 }

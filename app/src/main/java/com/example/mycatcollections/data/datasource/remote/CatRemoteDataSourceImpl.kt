@@ -10,4 +10,8 @@ class CatRemoteDataSourceImpl(
     override suspend fun fetchCatData(): List<CatResponse>? {
         return catApiService.getCatCollections()
     }
+
+    override suspend fun fetchCatDataById(id: String): CatResponse? {
+        return catApiService.getCatById(id)
+    }
 }

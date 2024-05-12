@@ -3,4 +3,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cat_breed_name">Cat Breed Name</string>
+    <string name="cat_title">Cat Title</string>
+    <string name="desc">Lorem asjdak sjhdk jashdkjas hdkjashd kjashdkja shdkjas hdkjas hdkasj</string>
+    <string name="origin_title">Origin</string>
+    <string name="origin">Egypt</string>
+    <string name="weight_title">Weight</string>
+    <string name="weight">35</string>
+    <string name="lifespan_title">Life Span</string>
+    <string name="lifespan">125</string>
+    <string name="temperament_title">Temperament</string>
+    <string name="temperament">Funny and cute</string>
+    <string name="learn_more">Learn More</string>
 </resources>

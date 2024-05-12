@@ -8,6 +8,20 @@
     <fragment
         android:id="@+id/catCollectionsFragment"
         android:name="com.example.mycatcollections.presentation.fragment.catcollections.CatCollectionsFragment"
-        android:label="fragment_cat_collections"
-        tools:layout="@layout/fragment_cat_collections" />
+        android:label="My Cat Collections"
+        tools:layout="@layout/fragment_cat_collections" >
+        <action
+            android:id="@+id/action_catCollectionsFragment_to_catDetailFragment"
+            app:destination="@id/catDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/catDetailFragment"
+        android:name="com.example.mycatcollections.presentation.fragment.catdetail.CatDetailFragment"
+        android:label="Cat Detail"
+        tools:layout="@layout/fragment_cat_detail" >
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

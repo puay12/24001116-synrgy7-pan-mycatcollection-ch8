@@ -4,6 +4,7 @@ import com.example.mycatcollections.data.datasource.remote.API_KEY
 import com.example.mycatcollections.data.model.CatResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface CatApiService {
@@ -21,4 +22,13 @@ interface CatApiService {
         @Query("page") page: String = "0",
         @Query("limit") limit: String = "25"
     ) : List<CatResponse>?
+
+    @GET("{id}")
+    @Headers(
+        "accept: application/json",
+        "x-api-key: $API_KEY"
+    )
+    suspend fun getCatById(
+        @Path("id") id: String
+    ) : CatResponse?
 }
