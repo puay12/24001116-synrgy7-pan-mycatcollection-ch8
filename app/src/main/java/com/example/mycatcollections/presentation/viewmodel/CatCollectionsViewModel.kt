@@ -40,6 +40,7 @@ class CatCollectionsViewModel(
 
     private val _liveCatCollectionsData: MutableLiveData<List<Cat>> = MutableLiveData()
     private val _error: MutableLiveData<Throwable> = MutableLiveData<Throwable>()
+    private val _loading: MutableLiveData<Boolean> = MutableLiveData<Boolean>()
 
     fun getCatCollections(): LiveData<List<Cat>> {
         loadData()
@@ -50,13 +51,19 @@ class CatCollectionsViewModel(
         return _error
     }
 
+    fun getLoading() : LiveData<Boolean> {
+        return _loading
+    }
+
     private fun loadData() {
         viewModelScope.launch {
+            _loading.value = true
             try {
                 _liveCatCollectionsData.value = catApiRepository.getCatCollections()
             } catch (error: Throwable) {
                 _error.value = error
             }
+            _loading.value = false
         }
     }
 }

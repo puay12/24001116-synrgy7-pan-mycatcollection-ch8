@@ -57,6 +57,14 @@ class CatCollectionsFragment : Fragment(), CatCollectionsAdapterListener {
     }
 
     private fun refresh() {
+        viewModel.getLoading().observe(this) { isLoading ->
+            if (isLoading) {
+                binding.flipper.displayedChild = 1
+            } else {
+                binding.flipper.displayedChild = 0
+            }
+        }
+
         viewModel.getCatCollections().observe(this) { cats ->
             catCollectionsAdapter.submitList(cats)
         }

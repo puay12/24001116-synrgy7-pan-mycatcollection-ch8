@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.viewModels
 import coil.load
 import com.example.mycatcollections.databinding.FragmentCatDetailBinding
@@ -18,7 +19,6 @@ class CatDetailFragment : Fragment() {
         CatDetailViewModel.provideFactory(this, requireActivity().applicationContext)
     }
     private lateinit var binding: FragmentCatDetailBinding
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +32,6 @@ class CatDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setView()
-        binding.swipeRefresh.setOnRefreshListener { setView() }
     }
 
     private fun setView() {
@@ -56,8 +55,6 @@ class CatDetailFragment : Fragment() {
                 Snackbar.LENGTH_SHORT
             ).show()
         }
-
-        binding.swipeRefresh.isRefreshing = false
     }
 
     private fun navigateToGoogle(name: String) {
