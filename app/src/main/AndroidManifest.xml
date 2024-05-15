@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MyCatCollections"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.activity.MainActivity"
+            android:name=".presentation.activity.NavigatorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".presentation.activity.LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".presentation.activity.MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
