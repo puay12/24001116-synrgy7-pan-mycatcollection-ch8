@@ -1,7 +1,7 @@
 package com.example.mycatcollections.data.repository
 
 import com.example.mycatcollections.data.datasource.interfaces.CatRemoteDataSource
-import com.example.mycatcollections.data.model.Cat
+import com.example.mycatcollections.domain.model.Cat
 import com.example.mycatcollections.data.model.CatResponse
 import com.example.mycatcollections.domain.repository.CatApiRepository
 

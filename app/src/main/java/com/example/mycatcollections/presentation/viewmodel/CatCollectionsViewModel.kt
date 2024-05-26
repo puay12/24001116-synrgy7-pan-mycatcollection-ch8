@@ -5,7 +5,6 @@ import androidx.lifecycle.*
 import androidx.savedstate.SavedStateRegistryOwner
 import com.example.mycatcollections.data.datasource.remote.CatRemoteDataSourceImpl
 import com.example.mycatcollections.data.datasource.remote.provideCatApiService
-import com.example.mycatcollections.data.datasource.services.CatApiService
 import com.example.mycatcollections.data.model.Cat
 import com.example.mycatcollections.data.repository.CatApiRepositoryImpl
 import com.example.mycatcollections.domain.repository.CatApiRepository

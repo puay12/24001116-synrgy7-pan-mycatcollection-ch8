@@ -1,6 +1,6 @@
 package com.example.mycatcollections.domain.repository
 
-import com.example.mycatcollections.data.model.Cat
+import com.example.mycatcollections.domain.model.Cat
 
 interface CatApiRepository {
     suspend fun getCatCollections() : List<Cat>
