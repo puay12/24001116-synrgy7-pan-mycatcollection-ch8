@@ -1,7 +1,7 @@
 package com.example.mycatcollections.presentation.fragment.catcollections.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.mycatcollections.data.model.Cat
+import com.example.mycatcollections.domain.model.Cat
 
 class CatCollectionsDiffUtil : DiffUtil.ItemCallback<Cat>() {
     override fun areItemsTheSame(oldItem: Cat, newItem: Cat): Boolean {

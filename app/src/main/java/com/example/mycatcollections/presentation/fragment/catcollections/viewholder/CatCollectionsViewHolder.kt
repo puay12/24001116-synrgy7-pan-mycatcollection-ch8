@@ -2,7 +2,7 @@ package com.example.mycatcollections.presentation.fragment.catcollections.viewho
 
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.mycatcollections.data.model.Cat
+import com.example.mycatcollections.domain.model.Cat
 import com.example.mycatcollections.databinding.ItemCatBinding
 import com.example.mycatcollections.presentation.fragment.catcollections.adapter.CatCollectionsAdapterListener
 

@@ -3,14 +3,11 @@ package com.example.mycatcollections.presentation.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mycatcollections.R
 import com.example.mycatcollections.databinding.ActivityLoginBinding
 import com.example.mycatcollections.presentation.viewmodel.LoginViewModel
 import com.google.android.material.snackbar.Snackbar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class LoginActivity : AppCompatActivity() {
@@ -21,9 +18,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private val binding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
-    private val viewModel : LoginViewModel by viewModels<LoginViewModel>() {
-        LoginViewModel.provideFactory(this, applicationContext)
-    }
+    private val viewModel by viewModel<LoginViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

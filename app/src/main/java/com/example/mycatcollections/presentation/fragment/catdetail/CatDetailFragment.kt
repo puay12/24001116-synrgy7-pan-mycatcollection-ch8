@@ -7,17 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import androidx.fragment.app.viewModels
 import coil.load
 import com.example.mycatcollections.databinding.FragmentCatDetailBinding
 import com.example.mycatcollections.presentation.viewmodel.CatDetailViewModel
 import com.google.android.material.snackbar.Snackbar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CatDetailFragment : Fragment() {
-    private val viewModel: CatDetailViewModel by viewModels<CatDetailViewModel> {
-        CatDetailViewModel.provideFactory(this, requireActivity().applicationContext)
-    }
+    private val viewModel by viewModel<CatDetailViewModel>()
     private lateinit var binding: FragmentCatDetailBinding
 
     override fun onCreateView(

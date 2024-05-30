@@ -16,3 +16,4 @@ rootProject.name = "My Cat Collections"
 include ':app'
 include ':domain'
 include ':data'
+include ':di'

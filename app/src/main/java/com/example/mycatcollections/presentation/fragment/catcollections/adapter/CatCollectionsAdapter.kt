@@ -3,7 +3,7 @@ package com.example.mycatcollections.presentation.fragment.catcollections.adapte
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.example.mycatcollections.data.model.Cat
+import com.example.mycatcollections.domain.model.Cat
 import com.example.mycatcollections.databinding.ItemCatBinding
 import com.example.mycatcollections.presentation.fragment.catcollections.viewholder.CatCollectionsViewHolder
 

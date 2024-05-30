@@ -10,19 +10,16 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.mycatcollections.R
-import com.example.mycatcollections.data.model.Cat
 import com.example.mycatcollections.databinding.FragmentCatCollectionsBinding
 import com.example.mycatcollections.extension.SpacesItemDecoration
 import com.example.mycatcollections.presentation.fragment.catcollections.adapter.CatCollectionsAdapter
 import com.example.mycatcollections.presentation.fragment.catcollections.adapter.CatCollectionsAdapterListener
 import com.example.mycatcollections.presentation.viewmodel.CatCollectionsViewModel
 import com.google.android.material.snackbar.Snackbar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CatCollectionsFragment : Fragment(), CatCollectionsAdapterListener {
-    private val viewModel: CatCollectionsViewModel by viewModels<CatCollectionsViewModel> {
-        CatCollectionsViewModel.provideFactory(this, requireActivity().applicationContext)
-    }
+    private val viewModel by viewModel<CatCollectionsViewModel>()
     private val catCollectionsAdapter = CatCollectionsAdapter(this)
     private lateinit var binding: FragmentCatCollectionsBinding
 
