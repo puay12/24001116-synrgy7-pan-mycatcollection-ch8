@@ -19,4 +19,8 @@
     <string name="password_label">Password</string>
     <string name="login_btn_text">Masuk</string>
     <string name="logout_title">Logout</string>
+    <string name="image_content_desc">TODO</string>
+    <string name="user_name">Putri Ayu N. A.</string>
+    <string name="upload_profile_picture">Upload Profile Picture</string>
+    <string name="profile">Profile</string>
 </resources>

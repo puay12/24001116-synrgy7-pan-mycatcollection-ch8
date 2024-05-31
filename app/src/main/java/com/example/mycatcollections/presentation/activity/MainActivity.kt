@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.mycatcollections.R
@@ -37,18 +36,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.logout, menu);
+        menuInflater.inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id: Int = item.itemId
-        Log.i("the id", id.toString())
-        Log.i("id nya", R.id.logout.toString())
+
         when (id) {
             R.id.logout -> {
                 viewModel.logout()
                 LoginActivity.startActivity(this)
+            }
+            R.id.profile -> {
+                UserProfileActivity.startActivity(this)
             }
         }
         return super.onOptionsItemSelected(item)

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="origin">Origin</string>
     <string name="image_content_desc">TODO</string>
-    <string name="user_name">Putri Ayu N. A.</string>
+    <string name="user_name">Halo</string>
     <string name="upload_profile_picture">Upload Profile Picture</string>
     <string name="profile">Profile</string>
 </resources>
