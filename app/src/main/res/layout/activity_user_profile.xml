@@ -26,27 +26,100 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="24dp"
         android:text="@string/user_name"
         android:textStyle="bold"
         android:textSize="24sp"
+        android:textColor="?android:textColorPrimary"
         app:layout_constraintTop_toBottomOf="@id/avatar"
-        app:layout_constraintBottom_toTopOf="@id/upload_btn"
+        app:layout_constraintBottom_toTopOf="@id/radio_blur_group"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/upload_btn"
+    <RadioGroup
+        android:id="@+id/radio_blur_group"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:checkedButton="@+id/radio_blur_lv_1"
+        android:gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/user_name"
+        app:layout_constraintBottom_toTopOf="@id/progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton android:id="@+id/radio_blur_lv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="@string/radio_level_1" />
+
+        <RadioButton android:id="@+id/radio_blur_lv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="@string/radio_level_2" />
+
+        <RadioButton android:id="@+id/radio_blur_lv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_level_3" />
+
+    </RadioGroup>
+
+    <ProgressBar
+        style="?android:progressBarStyleSmall"
+        android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/upload_profile_picture"
-        android:textAllCaps="false"
-        android:textColor="?android:textColorPrimary"
-        app:layout_constraintTop_toBottomOf="@id/user_name"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/radio_blur_group"
+        app:layout_constraintBottom_toTopOf="@id/buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-    </com.google.android.material.button.MaterialButton>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/upload_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="@string/upload_profile_picture"
+            android:textAllCaps="false"
+            android:textColor="?android:textColorPrimary"
+            android:visibility="visible"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/go_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blur_image"
+            android:textAllCaps="false"
+            android:textColor="?android:textColorPrimary"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="?android:textColorPrimary"
+            android:visibility="gone" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

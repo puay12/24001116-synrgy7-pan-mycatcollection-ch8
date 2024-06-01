@@ -1,5 +1,6 @@
 package com.example.mycatcollections.di
 
+import android.app.Application
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import com.example.mycatcollections.data.datasource.interfaces.AuthLocalDataSource
@@ -11,7 +12,6 @@ import com.example.mycatcollections.data.datasource.services.CatApiService
 import com.example.mycatcollections.data.datasource.services.datastore
 import com.example.mycatcollections.data.repository.AuthRepositoryImpl
 import com.example.mycatcollections.data.repository.CatApiRepositoryImpl
-import com.example.mycatcollections.domain.model.Cat
 import com.example.mycatcollections.domain.repository.AuthRepository
 import com.example.mycatcollections.domain.repository.CatApiRepository
 import org.koin.android.ext.koin.androidContext

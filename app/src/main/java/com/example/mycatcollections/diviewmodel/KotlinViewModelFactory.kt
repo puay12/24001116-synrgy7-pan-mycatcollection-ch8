@@ -10,4 +10,5 @@ val viewModelModule = module {
     viewModel { CatDetailViewModel(catApiRepository = get()) }
     viewModel { MainViewModel(authRepository = get()) }
     viewModel { NavigatorViewModel(authRepository = get()) }
+    viewModel { UserProfileViewModel(app = get()) }
 }
