@@ -81,30 +81,17 @@ class UserProfileActivity : AppCompatActivity() {
         viewModel.outputWorkInfos.observe(this, workInfosObserver())
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        val id: Int = item.itemId
-//
-//        if (id == androidx.appcompat.R.id.home) {
-//            this.finish();
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item)
-//    }
-
     private fun checkPermissionLogic() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            permissionCheckLogic = (
-                isMediaImagePermissionGranted() &&
-                isCameraPermissionGranted() &&
-                isNotifPermissionGranted()
-            )
+        permissionCheckLogic = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            (isMediaImagePermissionGranted() &&
+            isCameraPermissionGranted() &&
+            isNotifPermissionGranted())
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            (isCameraPermissionGranted() &&
+            isReadExternalStoragePermissionGranted())
         } else {
-            permissionCheckLogic = (
-                isCameraPermissionGranted() &&
-                isReadExternalStoragePermissionGranted() &&
-                isWriteExternalStoragePermissionGranted()
-            )
+            (isCameraPermissionGranted() &&
+            isWriteExternalStoragePermissionGranted())
         }
     }
 
