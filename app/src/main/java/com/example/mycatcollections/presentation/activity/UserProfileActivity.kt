@@ -59,7 +59,6 @@ class UserProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true);
 
         binding.uploadBtn.setOnClickListener {
             checkPermissionLogic()
@@ -82,16 +81,16 @@ class UserProfileActivity : AppCompatActivity() {
         viewModel.outputWorkInfos.observe(this, workInfosObserver())
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id: Int = item.itemId
-
-        if (id == androidx.appcompat.R.id.home) {
-            this.finish();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        val id: Int = item.itemId
+//
+//        if (id == androidx.appcompat.R.id.home) {
+//            this.finish();
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item)
+//    }
 
     private fun checkPermissionLogic() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
