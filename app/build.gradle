@@ -21,11 +21,34 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "mode"
+    productFlavors {
+        IT {                            // Internal Test
+            dimension "mode"
+            applicationIdSuffix ".it"
+            versionNameSuffix "-it"
+            buildConfigField "String", "APPLICATION_ID", "\"com.example.mycatcollections.it.provider\""
+        }
+        AT {                            // Acceptance Test (QA)
+            dimension "mode"
+            applicationIdSuffix ".at"
+            versionNameSuffix "-at"
+            buildConfigField "String", "APPLICATION_ID", "\"com.example.mycatcollections.at.provider\""
+        }
+        PROD {
+            dimension "mode"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -35,6 +58,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
     lintOptions {
         disable 'NullSafeMutableLiveData'

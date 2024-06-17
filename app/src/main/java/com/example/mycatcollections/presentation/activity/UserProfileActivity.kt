@@ -21,6 +21,7 @@ import androidx.core.content.FileProvider
 import androidx.lifecycle.Observer
 import androidx.work.WorkInfo
 import coil.load
+import com.example.mycatcollections.BuildConfig
 import com.example.mycatcollections.R
 import com.example.mycatcollections.databinding.ActivityUserProfileBinding
 import com.example.mycatcollections.presentation.viewmodel.UserProfileViewModel
@@ -183,7 +184,7 @@ class UserProfileActivity : AppCompatActivity() {
 
         imageUri = FileProvider.getUriForFile(
             this,
-            "com.example.mycatcollections.provider",
+            BuildConfig.APPLICATION_ID,
             pict
         )
 

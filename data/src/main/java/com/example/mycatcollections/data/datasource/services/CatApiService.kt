@@ -1,6 +1,5 @@
 package com.example.mycatcollections.data.datasource.services
 
-import com.example.mycatcollections.data.datasource.remote.API_KEY
 import com.example.mycatcollections.data.model.CatResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers

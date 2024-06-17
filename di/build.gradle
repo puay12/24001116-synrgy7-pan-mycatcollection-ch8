@@ -17,17 +17,37 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "mode"
+    productFlavors {
+        IT {                            // Internal Test
+            dimension "mode"
+        }
+        AT {                            // Acceptance Test (QA)
+            dimension "mode"
+        }
+        PROD {
+            dimension "mode"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '11'
+    }
+    buildFeatures {
+        buildConfig true
     }
 }
 

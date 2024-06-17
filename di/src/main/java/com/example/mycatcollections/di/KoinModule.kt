@@ -1,13 +1,12 @@
 package com.example.mycatcollections.di
 
-import android.app.Application
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import com.example.mycatcollections.data.datasource.interfaces.AuthLocalDataSource
 import com.example.mycatcollections.data.datasource.interfaces.CatRemoteDataSource
 import com.example.mycatcollections.data.datasource.local.AuthLocalDataSourceImpl
 import com.example.mycatcollections.data.datasource.remote.CatRemoteDataSourceImpl
-import com.example.mycatcollections.data.datasource.remote.provideCatApiService
+import com.example.mycatcollections.data.datasource.services.provideCatApiService
 import com.example.mycatcollections.data.datasource.services.CatApiService
 import com.example.mycatcollections.data.datasource.services.datastore
 import com.example.mycatcollections.data.repository.AuthRepositoryImpl

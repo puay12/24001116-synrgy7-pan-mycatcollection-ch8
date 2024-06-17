@@ -1,8 +1,8 @@
-package com.example.mycatcollections.data.datasource.remote
+package com.example.mycatcollections.data.datasource.services
 
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
-import com.example.mycatcollections.data.datasource.services.CatApiService
+import com.example.mycatcollections.data.BuildConfig
 import com.google.gson.Gson
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -40,6 +40,6 @@ private fun provideChuckerInterceptor(context: Context): Interceptor {
 fun provideCatApiService(context: Context) : CatApiService {
     return provideRetrofitBuilder(
         context,
-        "https://api.thecatapi.com/v1/images/"
+        BuildConfig.BASE_URL
     ).create(CatApiService::class.java)
 }
