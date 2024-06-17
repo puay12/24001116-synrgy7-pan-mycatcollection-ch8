@@ -53,6 +53,7 @@ import java.util.UUID
 
 private const val TAG = "WorkerUtils"
 
+@SuppressLint("MissingPermission")
 fun makeStatusNotification(message: String, context: Context) {
     // Make a channel if necessary
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
