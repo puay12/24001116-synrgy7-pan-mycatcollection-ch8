@@ -9,8 +9,6 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
-import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -21,7 +19,6 @@ import androidx.core.content.FileProvider
 import androidx.lifecycle.Observer
 import androidx.work.WorkInfo
 import coil.load
-import com.example.mycatcollections.BuildConfig
 import com.example.mycatcollections.R
 import com.example.mycatcollections.databinding.ActivityUserProfileBinding
 import com.example.mycatcollections.presentation.viewmodel.UserProfileViewModel
@@ -184,7 +181,7 @@ class UserProfileActivity : AppCompatActivity() {
 
         imageUri = FileProvider.getUriForFile(
             this,
-            BuildConfig.APPLICATION_ID,
+            "com.example.mycatcollections.provider",
             pict
         )
 

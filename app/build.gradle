@@ -34,15 +34,11 @@ android {
     productFlavors {
         IT {                            // Internal Test
             dimension "mode"
-            applicationIdSuffix ".it"
             versionNameSuffix "-it"
-            buildConfigField "String", "APPLICATION_ID", "\"com.example.mycatcollections.it.provider\""
         }
         AT {                            // Acceptance Test (QA)
             dimension "mode"
-            applicationIdSuffix ".at"
             versionNameSuffix "-at"
-            buildConfigField "String", "APPLICATION_ID", "\"com.example.mycatcollections.at.provider\""
         }
         PROD {
             dimension "mode"
