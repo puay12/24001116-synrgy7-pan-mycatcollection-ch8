@@ -1,4 +1,4 @@
-name: "Deploy to Firebase Distribution"
+name: "Deploy App to Firebase Distribution"
 
 on:
   pull_request:
