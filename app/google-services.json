@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "978217259634",
+    "project_id": "mycatcollections",
+    "storage_bucket": "mycatcollections.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978217259634:android:7c40c2632f6af420c7e8eb",
+        "android_client_info": {
+          "package_name": "com.example.mycatcollections"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC64_qKUkFiPcT_POxSEFqQ0BdGZ9WV6T8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
