@@ -18,10 +18,12 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
+            debuggable true
             buildConfigField "String", "BASE_URL", "\"https://api.thecatapi.com/v1/images/\""
         }
         release {
             minifyEnabled true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", "\"https://api.thecatapi.com/v1/images/\""
         }
