@@ -1,7 +1,9 @@
 package com.example.mycatcollections.data.model
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class BreedsItem(
     @field:SerializedName("suppressed_tail")
     val suppressedTail: Int? = null,
