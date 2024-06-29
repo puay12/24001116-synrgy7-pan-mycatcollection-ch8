@@ -6,7 +6,23 @@ on:
       - opened
 
 jobs:
-  build:
+  run_unit_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Run Unit Tests
+        run: ./gradlew testPRODDebugUnitTest
+
+  upload_app_to_firebase:
+    needs: run_unit_test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,3 +36,11 @@ jobs:
 
       - name: Build App
         run: ./gradlew assemblePROD
+
+      - name: Upload and Distribute App to Firebase
+        uses: mastersam07/firebase-app-distribution-action@v0.1
+        with:
+          serviceCredentialsFileContent: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+          appId: ${{ secrets.FIREBASE_APP_ID }}
+          file: app/build/outputs/apk/PROD/debug/app-PROD-debug.apk
+          groups: beta-testers
