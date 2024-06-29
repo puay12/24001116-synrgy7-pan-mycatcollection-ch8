@@ -28,4 +28,5 @@
     <string name="radio_level_1">Level 1</string>
     <string name="radio_level_2">Level 2</string>
     <string name="radio_level_3">Level 3</string>
+    <string name="trigger_crash">Trigger Crash</string>
 </resources>

@@ -41,6 +41,8 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        binding.buttonCrash.setOnClickListener { throw RuntimeException("Test Crash") }
+
         viewModel.getLoading().observe(this) { isLoading ->
             if (isLoading) {
                 binding.flipperLogin.displayedChild = 1
