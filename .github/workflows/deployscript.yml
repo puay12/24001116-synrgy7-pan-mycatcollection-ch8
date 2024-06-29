@@ -19,7 +19,7 @@ jobs:
           java-version: '17'
 
       - name: Run Unit Tests
-        run: ./gradlew testPRODDebugUnitTest
+        run: ./gradlew testPRODReleaseUnitTest
 
   upload_app_to_firebase:
     needs: run_unit_test
@@ -42,5 +42,5 @@ jobs:
         with:
           serviceCredentialsFileContent: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
           appId: ${{ secrets.FIREBASE_APP_ID }}
-          file: app/build/outputs/apk/PROD/debug/app-PROD-debug.apk
+          file: app/PROD/release/app-PROD-release.apk
           groups: beta-testers
