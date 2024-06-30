@@ -4,4 +4,4 @@
 ## Note
 Proses upload dan blur image ada pada halaman profile. Button untuk blur image akan muncul setelah upload foto.
 
-## Thanks yaa
+## Thank you
