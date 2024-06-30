@@ -1,5 +1,8 @@
 package com.example.mycatcollections.data.model
 
+import androidx.annotation.Keep
+
+@Keep
 data class Cat(
     val id: String,
     val imgUrl: String,

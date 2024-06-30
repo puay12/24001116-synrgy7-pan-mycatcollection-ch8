@@ -1,4 +1,4 @@
-name: "Deploy to Firebase Distribution"
+name: "Deploy App to Firebase Distribution"
 
 on:
   pull_request:
@@ -6,17 +6,41 @@ on:
       - opened
 
 jobs:
-  build:
+  run_unit_test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-#      - name: Setup Java
-#        uses: actions/setup-java@v4
-#        with:
-#          distribution: 'zulu'
-#          java-version: '17'
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Run Unit Tests
+        run: ./gradlew testPRODReleaseUnitTest
+
+  upload_app_to_firebase:
+    needs: run_unit_test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
 
       - name: Build App
-        run: ./gradlew assemblePRODDebug
+        run: ./gradlew assemblePROD
+
+      - name: Upload and Distribute App to Firebase
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          serviceCredentialsFileContent: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+          appId: ${{ secrets.FIREBASE_APP_ID }}
+          file: app/PROD/release/app-PROD-release.apk
+          groups: beta-testers
